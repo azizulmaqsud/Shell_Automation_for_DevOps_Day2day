@@ -89,7 +89,7 @@ for line in "${array[@]}" do
 echo $line Done
 
 STEP 2 – chmod +x array_automation.sh 
-STEP 4 - ./ array_automation.sh
+STEP 3 - ./ array_automation.sh
 
 # Log Automation
 Archive The Data With Find/Mtime/Tar/Name Command
