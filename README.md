@@ -1,23 +1,6 @@
 # Shell Scripting Automation for DevOps Day2day [Very Important]
 
-# Shell Scripting: Some useful commands
-sed -n '1,3'p test.sh	------> prints 1 to 3 lines [p -> print /n-> number ]
-
-awk '{print}' test.sh	-------> prints the whole file
-
-awk /manager/'{print}' test.sh prints lines with "manager" word
-
-awk -F'[.]' '/^version/{print $1"."$2"."$3"."$4+1}' test.sh
-
-version=1.2.3.4 -- Version Increment
-
-sed 's/tenth/eleven/g' test.sh -> Replace a value in a file hello=DevOps=learners
-
-echo $hello | sed 's/=/ /g' | awk '{print $2}'
-
-
-
-# JFrog Automation with IF ELSE block
+## JFrog Automation with IF ELSE block
 
 #!/bin/sh CICD=true WORKSPACE=/opt/
 
@@ -41,7 +24,7 @@ fi
 
 fi
 
-# Jira Automation with For Loop block 
+## Jira Automation with For Loop block 
 
 Get Token from Jira Account
 
@@ -79,7 +62,7 @@ STEP 5 - chmod +x jira.sh
 STEP 6 - Then hit the ./jira.sh script
 
 
-# Automate Array Declaration To check Jar Process
+## Automate Array Declaration To check Jar Process
 
 #!/bin/bash
 
@@ -133,7 +116,7 @@ STEP 2 – chmod +x array_automation.sh
 
 STEP 3 - ./ array_automation.sh
 
-# Log Automation
+## Log Automation
 Archive The Data With Find/Mtime/Tar/Name Command
 
 Create two folders 
@@ -165,7 +148,7 @@ chmod +x automation4.sh
 
  ./ automation4.sh
 
-# Date Automation with While loop 
+## Date Automation with While loop 
 
 For MAC
 
@@ -196,7 +179,7 @@ TWO=2
 april_date=`date -d '2023-04-03 -2 days' '+%Y-%m-%d'` echo $april_date
 
 
-# Automate Emails to your Team
+## Automate Emails to your Team
 
 /usr/sbin/sendmail -i -t << Subject: $1 server process status From: Email1
 
@@ -216,7 +199,7 @@ Azizul maqsud
 
 MESSAGE_END
 
-# Special Variables in Shell
+## Special Variables in Shell
   $#  Stores the number of command- line arguments that were passed to the shell program.
   
   $?  Stores the exit value of the last command that was executed.
@@ -256,7 +239,7 @@ With @:
 <Description>
 
 
-# Automate HTML File
+## Automate HTML File
 
 STEP 1 – Create jiraid.txt and version.txt
 
@@ -280,7 +263,8 @@ style="width: 100%; max-width: 1200px; background-color: #ffffff">
 
 </tr> EOF
 
-# MULTIPLE FILES READ
+MULTIPLE FILES READ:
+
 paste jiraid.txt version.txt | while read take; do cat >> jira.html <<EOF
 
 <tr>
@@ -298,7 +282,7 @@ STEP 3 – chmod +x automation7.sh
 STEP 4 - ./automation7.sh
 
 
-# Automate Sonar/GitLab Rest API
+## Automate Sonar/GitLab Rest API
 
 curl -u "GITLAB:$gitlab”
  
@@ -337,7 +321,7 @@ cat status.json| jq '.employee.name'
 curl --request POST --header "PRIVATE-TOKEN: $TOKEN" "https://gitlab/api/v4/projects/$PROJECT_ID/protected_branch es?name=$MS_TARGET_BRANCH&push_access_level=40&merg e_access_level=40" >> protectedbranches.txt
 
 
-# Automate the process of .Jar file
+## Automate the process of .Jar file
 
 (java –jar helloworld).	Id runtime cpu mem RAM App -> CPU RAM MEM HARDWARE. (AWK, SED, GREP,PIPE)
 
@@ -352,6 +336,21 @@ date1=`echo $date| sed 's/-//g’`
 **cat branch.json | jq '.branches[0].name' | tr -d '"' >> branch.txt
 
 ls -ltr | head -10
+
+## Some useful commands
+sed -n '1,3'p test.sh	------> prints 1 to 3 lines [p -> print /n-> number ]
+
+awk '{print}' test.sh	-------> prints the whole file
+
+awk /manager/'{print}' test.sh prints lines with "manager" word
+
+awk -F'[.]' '/^version/{print $1"."$2"."$3"."$4+1}' test.sh
+
+version=1.2.3.4 -- Version Increment
+
+sed 's/tenth/eleven/g' test.sh -> Replace a value in a file hello=DevOps=learners
+
+echo $hello | sed 's/=/ /g' | awk '{print $2}'
 
 
 # Thank YOU !
