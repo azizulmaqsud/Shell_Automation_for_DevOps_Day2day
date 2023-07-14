@@ -1,29 +1,5 @@
 # Shell Scripting Automation for DevOps Day2day [Very Important]
 
-## JFrog Automation with IF ELSE block
-
-#!/bin/sh CICD=true WORKSPACE=/opt/
-
-JOB_BASE_NAME=Test_demo BUILD_NUMBER=20
-
-if [ $CICD = true ] then
-
-echo "CI/CD pipe line check" file="${WORKSPACE}/basic_report.html" REPORTNAME=${JOB_BASE_NAME}_${BUILD_NUMBER}.Test_demo_20
-
-echo "CICD Check starting" if [ -f "$file" ]; then
-
-echo "testReport file found sending to artifactory"
-
-curl -H X-JFrog-Art-Api:Token -T $file https://oneartifactorycloud/artifactory/CICD/Reports/$REPORTNAME.html
-
-else
-
-echo "testReport file found sending to artifactory" 
-
-fi
-
-fi
-
 ## Jira Automation with For Loop block 
 
 Get Token from Jira Account
@@ -61,8 +37,31 @@ STEP 5 - chmod +x jira.sh
 
 STEP 6 - Then hit the ./jira.sh script
 
+## JFrog Automation with IF ELSE block
 
-## Automate Array Declaration To check Jar Process
+#!/bin/sh CICD=true WORKSPACE=/opt/
+
+JOB_BASE_NAME=Test_demo BUILD_NUMBER=20
+
+if [ $CICD = true ] then
+
+echo "CI/CD pipe line check" file="${WORKSPACE}/basic_report.html" REPORTNAME=${JOB_BASE_NAME}_${BUILD_NUMBER}.Test_demo_20
+
+echo "CICD Check starting" if [ -f "$file" ]; then
+
+echo "testReport file found sending to artifactory"
+
+curl -H X-JFrog-Art-Api:Token -T $file https://oneartifactorycloud/artifactory/CICD/Reports/$REPORTNAME.html
+
+else
+
+echo "testReport file found sending to artifactory" 
+
+fi
+
+fi
+
+## Automate Array Declaration 
 
 #!/bin/bash
 
